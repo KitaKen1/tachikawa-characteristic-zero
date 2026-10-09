@@ -8,12 +8,12 @@ Tachikawa's second conjecture, in its symmetric characteristic-zero formulation,
 > Let $\Gamma$ be a finite-dimensional symmetric $\mathbb Q$-algebra and let $M$ be a finite-dimensional left $\Gamma$-module. If
 >
 > $$
-> \operatorname{Ext}^i_\Gamma(M,M)=0\qquad\text{for every }i>0,
+> \mathrm{Ext}^i_\Gamma(M,M)=0\qquad\text{for every }i>0,
 > $$
 >
 > then $M$ is projective.
 
-Here symmetric means that $\Gamma$ and its rational dual are isomorphic as $\Gamma$-bimodules. Tensor products without a subscript are over $\mathbb Q$, and $D=\operatorname{Hom}_{\mathbb Q}(-,\mathbb Q)$.
+Here symmetric means that $\Gamma$ and its rational dual are isomorphic as $\Gamma$-bimodules. Tensor products without a subscript are over $\mathbb Q$, and $D=\mathrm{Hom}_{\mathbb Q}(-,\mathbb Q)$.
 
 This repository presents a proposed counterexample for **Formal Conjectures**: a symmetric rational algebra $\Gamma$ and a finite nonprojective module $M$ satisfying the displayed vanishing. The argument is outlined below and given in full in the [PDF manuscript](PDF/tachikawa-characteristic-zero.pdf).
 
@@ -45,10 +45,10 @@ R_0=Cf,\qquad R_i=Ce\ (i\ge1),\qquad
 d_1=\rho_u,\qquad d_{i+2}=\rho_{\ell_i}\ (i\ge0).
 $$
 
-The kernels and images can be computed in the displayed basis for every index. They give $\operatorname{Ext}^{i}_C(s,s)=0$ for $i>0$ and
+The kernels and images can be computed in the displayed basis for every index. They give $\mathrm{Ext}^{i}_C(s,s)=0$ for $i>0$ and
 
 $$
-H^a\operatorname{Hom}_C(R,C)=
+H^a\mathrm{Hom}_C(R,C)=
 \begin{cases}Ds&a=2,\\0&a\ne2.\end{cases}
 $$
 
@@ -63,10 +63,10 @@ s[2]\longrightarrow\mathcal J\longrightarrow s
 \xrightarrow{\tau}s[3].
 $$
 
-The associated long exact sequence gives $\operatorname{Ext}_T^*(s,s)=\mathbb Q[\tau]$, with $|\tau|=3$. The signed tensor product then gives
+The associated long exact sequence gives $\mathrm{Ext}_T^*(s,s)=\mathbb Q[\tau]$, with $|\tau|=3$. The signed tensor product then gives
 
 $$
-\operatorname{Ext}_E^*(X,X)=
+\mathrm{Ext}_E^*(X,X)=
 \mathbb Q\langle\tau_1,\tau_2\rangle/
 (\tau_1\tau_2+\tau_2\tau_1).
 $$
@@ -78,7 +78,7 @@ $$
 \mathcal H^{-3m-1}=D\mathcal P_m\qquad(m\ge0),
 $$
 
-where $\mathcal H^a=\underline{\operatorname{Hom}}_E(X,X[a])$ and all other groups vanish. The shift $[1]$ denotes inverse syzygy.
+where $\mathcal H^a=\underline{\mathrm{Hom}}_E(X,X[a])$ and all other groups vanish. The shift $[1]$ denotes inverse syzygy.
 
 For $H\in\mathbb Q^\times$, let $h_H(a,\phi)=(a,H\phi)$ on $T$, and let $U_H=E_{h_H\otimes h_H}$ denote the right-twisted regular bimodule. Its tensor functor fixes $X$ and acts on the two families of stable groups by
 
@@ -101,7 +101,7 @@ $$
 is an involutive automorphism of $C$. For every $a\in C$, the multiplication table gives
 
 $$
-\operatorname{tr}(L_aR_f\sigma_0^{-1})=0.
+\mathrm{tr}(L_aR_f\sigma_0^{-1})=0.
 $$
 
 Put $B=C\otimes C$ and $\theta_0=\sigma_0\otimes\sigma_0$. If $\chi_B$ is the character of $s\otimes s$, the bimodule map
@@ -116,7 +116,7 @@ cannot factor through a perfect bimodule complex. Indeed, the finite injective-d
 Derived induction and stable duality turn this obstruction into a finite bimodule $Y$, projective separately on the left and right, and maps $g_H:U_H\to Y$ whose evaluations at $X$ are stably nonzero. The signed Koszul sequence for $\tau_1,\tau_2$, together with its negative-degree dual, gives
 
 $$
-W^a:=\underline{\operatorname{Hom}}_E(X,(Y\otimes_E X)[a])=
+W^a:=\underline{\mathrm{Hom}}_E(X,(Y\otimes_E X)[a])=
 \begin{cases}\mathbb Q&a=-3,0,\\0&\text{otherwise}.\end{cases}
 $$
 
@@ -155,7 +155,7 @@ $$
 lift $v$ to a map between the two column complexes of a complete resolution of $X$, and take its mapping cone $P_Z$. Its degree-zero cokernel $Z$ is finite and nonprojective. The full endomorphism complex has connecting maps $\Delta^a$, so their kernels and cokernels give
 
 $$
-H^a\operatorname{Hom}_\Lambda(P_Z,Z)=
+H^a\mathrm{Hom}_\Lambda(P_Z,Z)=
 \begin{cases}\mathbb Q&a=-1,0,\\0&\text{otherwise}.\end{cases}
 $$
 
@@ -173,16 +173,16 @@ Total acyclicity of $P_Z$ makes $D\Lambda\otimes_\Lambda P_Z$ exact. Thus $\Gamm
 For $N=D\Lambda\otimes_\Lambda Z$, the negative tail supplies an injective coresolution and gives
 
 $$
-\operatorname{Ext}_\Lambda^i(Z,N)
-\cong D H^{-i-1}\operatorname{Hom}_\Lambda(P_Z,Z)=0
+\mathrm{Ext}_\Lambda^i(Z,N)
+\cong D H^{-i-1}\mathrm{Hom}_\Lambda(P_Z,Z)=0
 \qquad(i>0).
 $$
 
 Induction-restriction adjunction therefore yields
 
 $$
-\operatorname{Ext}_\Gamma^i(M,M)
-\cong\operatorname{Ext}_\Lambda^i(Z,Z\oplus N)=0
+\mathrm{Ext}_\Gamma^i(M,M)
+\cong\mathrm{Ext}_\Lambda^i(Z,Z\oplus N)=0
 \qquad(i>0).
 $$
 
