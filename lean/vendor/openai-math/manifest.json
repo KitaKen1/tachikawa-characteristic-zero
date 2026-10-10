@@ -1,0 +1,1128 @@
+{
+  "repository": "https://github.com/openai/math",
+  "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/CompleteTensor.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/CompleteTensor.lean",
+      "sha256": "758fc12b730c674c42dc4c29fe2166108f41928a592818826bba01952d0c2bf9"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/Twisting.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Twisting.lean",
+      "sha256": "69496ed3e7a36e91868fd0182f41c44a74504039e923fb5dc532b752432877f7"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/Coresolution.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Coresolution.lean",
+      "sha256": "7692f681e603d9049bd19f81f5c20fe1d9605fd9c553fa3952d15b2c96dd4b24"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/CompleteResolution.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/CompleteResolution.lean",
+      "sha256": "4ee7cf00861f44d83ada545f6dc3b0dc2f548fce260774f3c13c0a70fd4b605c"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/StableDuality.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/StableDuality.lean",
+      "sha256": "13724a69ce6c897bcc4dbedbff8f1b4049add79f6d0bb87c527c445bf5d50ebf"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/Symmetry.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Symmetry.lean",
+      "sha256": "1236e0d85c2a66c58f9c6650a8c735dc1a75b4a801170ebb5228089929103c69"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/Tensor.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Tensor.lean",
+      "sha256": "5557af22df57398c4225546ce7ffe67daad4455efed7a1361011905fec1332b7"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/StableShift.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/StableShift.lean",
+      "sha256": "58e60ab7ba86f2c1f20e35974a27f2a68544bacda8b359e672cb2541474c9860"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/Algebra/AuslanderReiten/Algebras/BaseAlgebra.lean",
+      "upstream_path": "lean/OAI/Algebra/AuslanderReiten/Algebras/BaseAlgebra.lean",
+      "sha256": "10a776ebd8433453e908f14a3eb8f24eba4aec058b23d6d45e9ea9599cc217eb"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/TwistHom.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/TwistHom.lean",
+      "sha256": "456e8497205b30d68d789b81553752b8f22bedf1959ee3f530fee7c04cb91f3e"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/OuterTensor.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/OuterTensor.lean",
+      "sha256": "39e4c586af3e229492c8029269a5b087d4a99ddcffa63b5413237abec22af7d5"
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/NakayamaTransfer.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Nakayama.lean",
+      "sha256": "e1f983674d7fc2bae6d8831d05e838f84303dd3659599149e0eabb6f3a65bdbd",
+      "source_sha256": "9fdc04316b8a9b1dbb85382c62b7a8664fae6aa343985d2fcad6d7da2e492880",
+      "extracted_from_line": 240,
+      "extracted_through_line": 1455,
+      "adaptation": "Replace import and outer namespace/section wrappers; excerpt declarations unchanged."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/StableEquivalence.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Perfect.lean",
+      "sha256": "e5d2ef278c540b17c56f58108c9774cb44d44a086be09132e1a8a839c853df7a",
+      "source_sha256": "f1b30e1bda271f7b78db55760fdcc7f33367d56fe13e0230d8a4e64cf784a85d",
+      "extracted_line_ranges": [
+        [
+          220,
+          337
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/CompleteStable.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/HomProfile.lean",
+      "sha256": "5655c62323628125c9eefa25e2d342b329b870204b7e95a74d1c1587259ecf36",
+      "source_sha256": "95f5fb94be0db2f62da14190a6f485c43bc3c84a821fb28a804511194d8916c0",
+      "extracted_line_ranges": [
+        [
+          139,
+          248
+        ],
+        [
+          334,
+          452
+        ],
+        [
+          883,
+          946
+        ],
+        [
+          1063,
+          1149
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/StableSyzygy.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/StableLift.lean",
+      "sha256": "75f81b704d7b9fd849f904241700937598e3b25909e559a833892f0e548d12f9",
+      "source_sha256": "af599c060ab08adaaa402568b706062f49104c7e40cf9f936749449a6971f43e",
+      "extracted_line_ranges": [
+        [
+          367,
+          389
+        ]
+      ],
+      "adaptation": "Declarations unchanged; import and namespace/section wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/ComplexReflection.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedInduction.lean",
+      "sha256": "9f4c24b60596fb1c2c98da5d08b1c8fd48e039d0a772de7e973d848c96615a68",
+      "source_sha256": "42d04fa1dfd158dc2760da627133b1dc49e953e0a31561d1ca77d939f018df3b",
+      "extracted_line_ranges": [
+        [
+          788,
+          850
+        ]
+      ],
+      "adaptation": "Declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/PerfectCutoff.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Perfect.lean",
+      "sha256": "905fe1e13851e4596564bae970275a5ae4ab129228be0fd210abbaaa2aeefcb0",
+      "source_sha256": "f1b30e1bda271f7b78db55760fdcc7f33367d56fe13e0230d8a4e64cf784a85d",
+      "extracted_line_ranges": [
+        [
+          471,
+          834
+        ]
+      ],
+      "adaptation": "Declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/OuterFactorization.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Corner.lean",
+      "sha256": "04db3cb26f92383d81b3f845672e3a7a757f0bed156ef1c5418339c8d470f94f",
+      "source_sha256": "86b94fceb438b2c4bfc44b1a844435119f588390e025baeef47f8f2361615717",
+      "extracted_line_ranges": [
+        [
+          610,
+          694
+        ]
+      ],
+      "adaptation": "Declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/FiniteDual.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/FiniteCoinduction.lean",
+      "sha256": "b189e3ecc56cbabe6b67e844eee6933e3a230778bc8a935b8e8b864071e15629",
+      "source_sha256": "b98ccbabc093782682c0f619af3a35087bea08252c0162202d05bebb17539f0b",
+      "extracted_line_ranges": [
+        [
+          201,
+          384
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; import and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/GenericCoinduction.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Coinduction.lean",
+      "sha256": "36663bdac9a7564f5492e5030e39237e9ee887c3dea99b96901f7c4dd60c31e3",
+      "source_sha256": "8eb2f8c81f122c3230024f539869339aab8273f27aafd5fe4a2fcad5e57ff203",
+      "extracted_line_ranges": [
+        [
+          519,
+          1492
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer namespace/section wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/OuterTensorAdditive.lean",
+      "sha256": "2feecef15352adb2704cf690c96f3418bd7815428307c4283e16f562308efa3f",
+      "adaptation": "Excerpt declarations unchanged; imports and outer namespace/section wrappers replaced.",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/ReverseResolution.lean",
+      "source_sha256": "986d6b8735edde5c98ca386ca43888ae5e96254a70f721cfedfcf6542f79bc33",
+      "extracted_line_ranges": [
+        [
+          1178,
+          1234
+        ]
+      ]
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/AdditiveClosure.lean",
+      "sha256": "64c4b25a09fd4e9a4d2333a7c019b42de3de58b0fd6c4f845c6e8e14a6819cf8",
+      "adaptation": "Excerpt declarations unchanged; imports and outer namespace/section wrappers replaced.",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Perfect.lean",
+          "source_sha256": "f1b30e1bda271f7b78db55760fdcc7f33367d56fe13e0230d8a4e64cf784a85d",
+          "extracted_line_ranges": [
+            [
+              985,
+              1024
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedDescent.lean",
+          "source_sha256": "d2d09b0dd9cfcf295286ff0a9d689ab4c19378929e5bfc6cf00ceebfbf37888e",
+          "extracted_line_ranges": [
+            [
+              7,
+              75
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/FiniteCoinduction.lean",
+          "source_sha256": "b98ccbabc093782682c0f619af3a35087bea08252c0162202d05bebb17539f0b",
+          "extracted_line_ranges": [
+            [
+              593,
+              617
+            ],
+            [
+              712,
+              748
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/FiniteOuterReplacement.lean",
+      "sha256": "c308d3c593fc8ed54ae29c51b852fc2eb703ae496296a62caeeff22dd262ffa6",
+      "adaptation": "Excerpt declarations unchanged; imports and outer namespace/section wrappers replaced.",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/FiniteCoinduction.lean",
+          "source_sha256": "b98ccbabc093782682c0f619af3a35087bea08252c0162202d05bebb17539f0b",
+          "extracted_line_ranges": [
+            [
+              418,
+              454
+            ],
+            [
+              497,
+              589
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedDescent.lean",
+          "source_sha256": "d2d09b0dd9cfcf295286ff0a9d689ab4c19378929e5bfc6cf00ceebfbf37888e",
+          "extracted_line_ranges": [
+            [
+              254,
+              285
+            ],
+            [
+              323,
+              345
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/FiniteCoinduction.lean",
+          "source_sha256": "b98ccbabc093782682c0f619af3a35087bea08252c0162202d05bebb17539f0b",
+          "extracted_line_ranges": [
+            [
+              672,
+              708
+            ],
+            [
+              752,
+              826
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/OrthogonalDescent.lean",
+      "sha256": "65cffefdacb208678ed8bafea42b8a670f016f6ea3113ea8a61c21ed2194dce1",
+      "adaptation": "Excerpt declarations unchanged; imports and outer namespace/section wrappers replaced.",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedInduction.lean",
+          "source_sha256": "42d04fa1dfd158dc2760da627133b1dc49e953e0a31561d1ca77d939f018df3b",
+          "extracted_line_ranges": [
+            [
+              711,
+              729
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedDescent.lean",
+          "source_sha256": "d2d09b0dd9cfcf295286ff0a9d689ab4c19378929e5bfc6cf00ceebfbf37888e",
+          "extracted_line_ranges": [
+            [
+              622,
+              1056
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/ScaleDual.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Period.lean",
+      "sha256": "9359d6791233de8abab0da716c5cf61e1ab100eb387b314731e0ba5f18f8a5dc",
+      "source_sha256": "e53f838e538f7f14e69e5b7d5b79efde5a6e0c9c9be353f42c9681037decc223",
+      "extracted_line_ranges": [
+        [
+          135,
+          179
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/BimoduleLinear.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedInduction.lean",
+      "sha256": "348c5113715e4c769c150af50bd9640192930cd2ae6027d11778c4bdb068f0c4",
+      "source_sha256": "42d04fa1dfd158dc2760da627133b1dc49e953e0a31561d1ca77d939f018df3b",
+      "extracted_line_ranges": [
+        [
+          549,
+          589
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/HomBimodule.lean",
+      "sha256": "5bf505fab01266f42a5cecb5ea9d08eb3083ee54e43e199ab109746a645805a9",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              266,
+              453
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Coinduction.lean",
+          "source_sha256": "8eb2f8c81f122c3230024f539869339aab8273f27aafd5fe4a2fcad5e57ff203",
+          "extracted_line_ranges": [
+            [
+              435,
+              458
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/ProductResolution.lean",
+      "sha256": "1b6dd428135324c7b17d97ebc87058193f4736bfd1f5b84e803cdc82308b4c6e",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/RightInduction.lean",
+          "source_sha256": "89889770f3f5808aa3317e6b0525b77fecd3f3abbb574e64cdd3cf29da15f5da",
+          "extracted_line_ranges": [
+            [
+              666,
+              781
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/RestrictedRegular.lean",
+      "sha256": "d13ac181796b48d8a695daf663e06222bcd97a0f3d8c81774c9169263036686e",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              696,
+              704
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Perfect.lean",
+          "source_sha256": "f1b30e1bda271f7b78db55760fdcc7f33367d56fe13e0230d8a4e64cf784a85d",
+          "extracted_line_ranges": [
+            [
+              920,
+              982
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/ProjectiveReplacement.lean",
+      "sha256": "4dbb6c8e69164434eca015c8f0f8b98863c72b7aa0640a663db5affdbb47ddc0",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedDescent.lean",
+          "source_sha256": "d2d09b0dd9cfcf295286ff0a9d689ab4c19378929e5bfc6cf00ceebfbf37888e",
+          "extracted_line_ranges": [
+            [
+              154,
+              251
+            ],
+            [
+              286,
+              320
+            ],
+            [
+              347,
+              459
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/ExactDerived.lean",
+      "sha256": "bd20f8fabe8c95e89aa0147cbf1a6e1889a543aaa2597df6d8dbd17cd8d2d1af",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedDescent.lean",
+          "source_sha256": "d2d09b0dd9cfcf295286ff0a9d689ab4c19378929e5bfc6cf00ceebfbf37888e",
+          "extracted_line_ranges": [
+            [
+              592,
+              618
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/InducedRegular.lean",
+      "sha256": "0c5be5600fa0e08000796b4f577f8f7438456b32a05d1947d3e92fb73f084ed0",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedInduction.lean",
+          "source_sha256": "42d04fa1dfd158dc2760da627133b1dc49e953e0a31561d1ca77d939f018df3b",
+          "extracted_line_ranges": [
+            [
+              593,
+              707
+            ],
+            [
+              711,
+              729
+            ],
+            [
+              733,
+              784
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/FiniteResolutionLift.lean",
+      "sha256": "a2e71505f07d113977df01b4b82c77f5895df03b82f1f84a1141b5651e675763",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/StableLift.lean",
+          "source_sha256": "af599c060ab08adaaa402568b706062f49104c7e40cf9f936749449a6971f43e",
+          "extracted_line_ranges": [
+            [
+              177,
+              212
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/HighLift.lean",
+      "sha256": "8c924653c10e0105cd890ef35f01245f253e9226d4ef5a0ff23121e16ae026d1",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedInduction.lean",
+          "source_sha256": "42d04fa1dfd158dc2760da627133b1dc49e953e0a31561d1ca77d939f018df3b",
+          "extracted_line_ranges": [
+            [
+              894,
+              924
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Perfect.lean",
+          "source_sha256": "f1b30e1bda271f7b78db55760fdcc7f33367d56fe13e0230d8a4e64cf784a85d",
+          "extracted_line_ranges": [
+            [
+              838,
+              916
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/InductionAdjunction.lean",
+      "sha256": "195dd4d80c6ccbfed609a4c70050f2c76e0320825529eb94b3542234d6d67386",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              807,
+              833
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/OneSidedInduction.lean",
+      "sha256": "c932b0b8edb4a2d97b584202763d3fd121057b993829860fba4292e3fc7c6173",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/RightInduction.lean",
+          "source_sha256": "89889770f3f5808aa3317e6b0525b77fecd3f3abbb574e64cdd3cf29da15f5da",
+          "extracted_line_ranges": [
+            [
+              187,
+              665
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/InducedSideResolution.lean",
+      "sha256": "432fbcf189b5e37e3f12c8bed423165b6cc4d3848aa1372ee28e3d48bded9415",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              837,
+              873
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/RightInduction.lean",
+          "source_sha256": "89889770f3f5808aa3317e6b0525b77fecd3f3abbb574e64cdd3cf29da15f5da",
+          "extracted_line_ranges": [
+            [
+              784,
+              925
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/InductionLeftComparison.lean",
+      "sha256": "926a4081ad14de3f2ce418cbbdae63623256385f6239d8c9d642c1aeda0bb4ef",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              644,
+              692
+            ],
+            [
+              696,
+              702
+            ],
+            [
+              706,
+              733
+            ],
+            [
+              741,
+              741
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Induction.lean",
+          "source_sha256": "033c52b28b1bf533b18d52c66b118f0aaf9329d6d1aea6cca5814daacede4ab5",
+          "extracted_line_ranges": [
+            [
+              315,
+              716
+            ],
+            [
+              720,
+              799
+            ],
+            [
+              852,
+              852
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/InductionRightComparison.lean",
+      "sha256": "a3acd077c03f274fc871f0e02fab9b0346af9973d392fc8e1859d0e6a77d39f3",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Induction.lean",
+          "source_sha256": "033c52b28b1bf533b18d52c66b118f0aaf9329d6d1aea6cca5814daacede4ab5",
+          "extracted_line_ranges": [
+            [
+              804,
+              852
+            ],
+            [
+              856,
+              1060
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/CokerComparison.lean",
+      "sha256": "ccd6262b89347c487d8fe0c131119da621cc5e9011a7107519fec643fecf9c26",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Perfect.lean",
+          "source_sha256": "f1b30e1bda271f7b78db55760fdcc7f33367d56fe13e0230d8a4e64cf784a85d",
+          "extracted_line_ranges": [
+            [
+              7,
+              66
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/SideProjectivity.lean",
+      "sha256": "251e61a9dfd87ec32415cd07b098d525526c9ebbb2ebc5d87cc6078b7984c402",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Period.lean",
+          "source_sha256": "e53f838e538f7f14e69e5b7d5b79efde5a6e0c9c9be353f42c9681037decc223",
+          "extracted_line_ranges": [
+            [
+              265,
+              282
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Delta.lean",
+          "source_sha256": "383dab18b319fb309fb7d8cd02e721046d919ec02d6ee56389031852227df873",
+          "extracted_line_ranges": [
+            [
+              90,
+              106
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              559,
+              577
+            ],
+            [
+              581,
+              640
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/StableLiftDescent.lean",
+      "sha256": "d0013731d1f5a6d97eecf0dc3875c36d472fa8dc096661a630ac029580fa6a8b",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/StableLift.lean",
+          "source_sha256": "af599c060ab08adaaa402568b706062f49104c7e40cf9f936749449a6971f43e",
+          "extracted_line_ranges": [
+            [
+              287,
+              371
+            ],
+            [
+              391,
+              443
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/EvaluationProjectivity.lean",
+      "sha256": "37c410be03ebac30e6fa9ab63c0c4ec99319d7fbcb54e3fe06c2c4db2960c87f",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              457,
+              523
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/StableEvaluation.lean",
+      "sha256": "bda07a26c27c59ed4de3dfbf5c19e853b63930ec50ccdf8fb8e0733800f09b86",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/StableLift.lean",
+          "source_sha256": "af599c060ab08adaaa402568b706062f49104c7e40cf9f936749449a6971f43e",
+          "extracted_line_ranges": [
+            [
+              496,
+              873
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/EvaluationCokernels.lean",
+      "sha256": "da83e574e1fd242f7b6fb4b71438e596813bc903ddf8b9c3146953ca6c3f8cdf",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              527,
+              555
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Perfect.lean",
+          "source_sha256": "f1b30e1bda271f7b78db55760fdcc7f33367d56fe13e0230d8a4e64cf784a85d",
+          "extracted_line_ranges": [
+            [
+              452,
+              467
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/EvaluationCosyzygy.lean",
+      "sha256": "6a3124a84660333aab241419e67cc55cf6beecebdac48aed0c683596cbf89482",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/HomProfile.lean",
+          "source_sha256": "95f5fb94be0db2f62da14190a6f485c43bc3c84a821fb28a804511194d8916c0",
+          "extracted_line_ranges": [
+            [
+              252,
+              294
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/EvaluationInduction.lean",
+      "sha256": "71e956be1da14286724217fbff983c47eb9f5377588ed0a055d57f6abb98bbf0",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/RightInduction.lean",
+          "source_sha256": "89889770f3f5808aa3317e6b0525b77fecd3f3abbb574e64cdd3cf29da15f5da",
+          "extracted_line_ranges": [
+            [
+              7,
+              183
+            ],
+            [
+              929,
+              1036
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+          "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+          "extracted_line_ranges": [
+            [
+              745,
+              803
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/OuterTensor.lean",
+          "source_sha256": "39e4c586af3e229492c8029269a5b087d4a99ddcffa63b5413237abec22af7d5",
+          "extracted_line_ranges": [
+            [
+              304,
+              321
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/InductionTensorTotal.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedInduction.lean",
+      "sha256": "42f2dec5e2bc35bece59d2241e5ca722706af88de4be64a5c81b7bcf0739dfda",
+      "source_sha256": "42d04fa1dfd158dc2760da627133b1dc49e953e0a31561d1ca77d939f018df3b",
+      "extracted_line_ranges": [
+        [
+          467,
+          517
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/CycleQuasiIso.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/ReverseResolution.lean",
+      "sha256": "bededde338235137459628da44c4b8cad2737ef1b0288c5656b943c27e1ae742",
+      "source_sha256": "986d6b8735edde5c98ca386ca43888ae5e96254a70f721cfedfcf6542f79bc33",
+      "extracted_line_ranges": [
+        [
+          473,
+          575
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/InductionQuasiIso.lean",
+      "sha256": "8c58c606b58c302bd807abc073a67ac0054b981bde2a8670f0d8e7b99d0d1e36",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/Period.lean",
+          "source_sha256": "e53f838e538f7f14e69e5b7d5b79efde5a6e0c9c9be353f42c9681037decc223",
+          "extracted_line_ranges": [
+            [
+              10,
+              40
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/ReverseResolution.lean",
+          "source_sha256": "986d6b8735edde5c98ca386ca43888ae5e96254a70f721cfedfcf6542f79bc33",
+          "extracted_line_ranges": [
+            [
+              989,
+              1018
+            ]
+          ]
+        }
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/IntegerTensor.lean",
+      "sha256": "5f35f636e35a45f72791026ac5e86bc4669607325344313e2e75e4c5202f5018",
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced.",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/ReverseResolution.lean",
+          "source_sha256": "986d6b8735edde5c98ca386ca43888ae5e96254a70f721cfedfcf6542f79bc33",
+          "extracted_line_ranges": [
+            [
+              1045,
+              1056
+            ],
+            [
+              1063,
+              1118
+            ],
+            [
+              1124,
+              1129
+            ],
+            [
+              1130,
+              1139
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/OuterExt.lean",
+          "source_sha256": "c96e4687926b9014dff5d27cba2c67e706bbe2894227e63eae0fe95552b2c64f",
+          "extracted_line_ranges": [
+            [
+              30,
+              33
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/IntegerTensorSupport.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/ReverseResolution.lean",
+      "sha256": "f91aaea1f97fe286700e286608ee78f5bcd05bad087dbf2b0bea5a0d22e97116",
+      "source_sha256": "986d6b8735edde5c98ca386ca43888ae5e96254a70f721cfedfcf6542f79bc33",
+      "extracted_line_ranges": [
+        [
+          1178,
+          1234
+        ],
+        [
+          1238,
+          1254
+        ],
+        [
+          1291,
+          1448
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/ModuleFiber.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Bimodule.lean",
+      "sha256": "0c233d0fe84d46dcc2ef7664abfc4a51871eccbefbdd8a72e8f9a09e561d5d37",
+      "source_sha256": "53330924100a588d40620cf3a84432499d485b260b1b8ce3ec7a4743c2c7d19a",
+      "extracted_line_ranges": [
+        [
+          9,
+          114
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/InductionTensorComparison.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/DerivedInduction.lean",
+      "sha256": "a90299a349571355d5477d70f8d239fbd89fa796d1d2f2ed9e699debfac86f53",
+      "source_sha256": "42d04fa1dfd158dc2760da627133b1dc49e953e0a31561d1ca77d939f018df3b",
+      "extracted_line_ranges": [
+        [
+          143,
+          392
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/SupportedTensorHom.lean",
+      "sha256": "f54f4c5b4e216ada8eb85e64bac92f73d24dd4fa80b22f5b9b418ce2d699db6a",
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced.",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/OuterExt.lean",
+          "source_sha256": "c96e4687926b9014dff5d27cba2c67e706bbe2894227e63eae0fe95552b2c64f",
+          "extracted_line_ranges": [
+            [
+              145,
+              158
+            ]
+          ]
+        },
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/HomProfile.lean",
+          "source_sha256": "95f5fb94be0db2f62da14190a6f485c43bc3c84a821fb28a804511194d8916c0",
+          "extracted_line_ranges": [
+            [
+              516,
+              605
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/IsolatedStableCoker.lean",
+      "sha256": "4bb9919d3a42599ca869cbe5d37a12d50dff5d32891dca01ab1d78d12ba03431",
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced.",
+      "source_excerpts": [
+        {
+          "upstream_path": "lean/OAI/RingTheory/Tachikawa/HomProfile.lean",
+          "source_sha256": "95f5fb94be0db2f62da14190a6f485c43bc3c84a821fb28a804511194d8916c0",
+          "extracted_line_ranges": [
+            [
+              713,
+              775
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/GenericCompleteCone.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Cone.lean",
+      "sha256": "db0c9cdf7b9fd15c3f02adaaa559187c386c2066a23de765ac393b470edb6733",
+      "source_sha256": "cf860222e8325246affc047624f534b062ef04e4dfffa91c2324ee292a7686af",
+      "extracted_line_ranges": [
+        [
+          9,
+          184
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/GenericBimoduleFiber.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Delta.lean",
+      "sha256": "96ab2f527adc478617cb7298d355ea86faf2b45f78163a72df2a978980224e1c",
+      "source_sha256": "383dab18b319fb309fb7d8cd02e721046d919ec02d6ee56389031852227df873",
+      "extracted_line_ranges": [
+        [
+          108,
+          194
+        ],
+        [
+          264,
+          300
+        ],
+        [
+          304,
+          340
+        ],
+        [
+          512,
+          535
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced. No characteristic-two construction section included."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/GenericCompletePair.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Delta.lean",
+      "sha256": "59efebf3d3d10b8c9e7d73c30812cad0bdda2c398ab13c3b013ae43938d5e2b1",
+      "source_sha256": "383dab18b319fb309fb7d8cd02e721046d919ec02d6ee56389031852227df873",
+      "extracted_line_ranges": [
+        [
+          463,
+          507
+        ],
+        [
+          623,
+          665
+        ],
+        [
+          1031,
+          1051
+        ]
+      ],
+      "adaptation": "Excerpt declarations unchanged; imports and outer wrappers replaced. No characteristic-two construction section included."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/GenericTriangular.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Triangular.lean",
+      "sha256": "9c5cac58bee72ea38dbdb462d02c0184d8aa96f6e7d327ce6cfa351bdcef6564",
+      "source_sha256": "5d480db239ca9d02aa1b046d2a83308cd72805c86833887101dcb30dea83f15f",
+      "extracted_line_ranges": [
+        [
+          3,
+          798
+        ]
+      ],
+      "adaptation": "All declarations unchanged; import closure replaced. No explicit CharP hypothesis occurs in the file."
+    },
+    {
+      "local_path": "vendor/openai-math/lean/OAI/RingTheory/Tachikawa/GenericTriangularCone.lean",
+      "upstream_path": "lean/OAI/RingTheory/Tachikawa/Cone.lean",
+      "sha256": "f11b759b21d793de581227149a8583aa051c5d303918f697aa98c8d7548a5274",
+      "source_sha256": "cf860222e8325246affc047624f534b062ef04e4dfffa91c2324ee292a7686af",
+      "extracted_line_ranges": [
+        [
+          478,
+          478
+        ],
+        [
+          509,
+          597
+        ],
+        [
+          627,
+          670
+        ]
+      ],
+      "adaptation": "Generic declarations unchanged. Imports/outer wrappers replaced; cone abbreviation moved to characteristic-independent wrapper. DownCone and boundary sections omitted."
+    }
+  ]
+}

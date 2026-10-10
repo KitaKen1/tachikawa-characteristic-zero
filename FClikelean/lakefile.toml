@@ -1,0 +1,28 @@
+name = "tachikawaFCDisplay"
+version = "0.1.0"
+defaultTargets = ["TachikawaCharZero", "AuslanderReiten"]
+
+[leanOptions]
+autoImplicit = false
+warn.sorry = false
+weak.linter.style.namespace = true
+weak.linter.style.stubs = true
+weak.linter.style.openClassical = true
+weak.linter.style.ams_attribute = true
+weak.linter.style.category_attribute = true
+weak.linter.style.category_answer = true
+weak.linter.style.conditional_formal_proof = true
+weak.linter.style.moduleDocstring = true
+weak.linter.style.latex_docstring = true
+weak.linter.style.imports = true
+
+[[lean_lib]]
+name = "TachikawaCharZero"
+
+[[lean_lib]]
+name = "AuslanderReiten"
+
+[[require]]
+name = "formal_conjectures"
+git = "https://github.com/google-deepmind/formal-conjectures.git"
+rev = "89294ea02bd7cd678d59984add52cb4baef3dbf4"

@@ -1,0 +1,20 @@
+Characteristic-zero Tachikawa Lean formalization
+Copyright 2026 Kenta Kitamura (KitaKen1).
+Distributed under the Apache License, Version 2.0; see LICENSE.
+
+This project adapts the characteristic-two construction and uses supporting
+Lean infrastructure from OpenAI Math, https://github.com/openai/math,
+source revision fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb.
+The vendor directory retains the upstream license and original source headers.
+The vendor manifest identifies the copied supporting files.
+
+The general Artin statement follows the Formal Conjectures Authors' source,
+https://github.com/google-deepmind/formal-conjectures,
+revision d838afa7a62f66dc034c96fb011c10b9bde3f44c,
+FormalConjectures/Paper/AuslanderReiten.lean (Apache-2.0).
+Its conjectural proof body is not imported.
+
+Presentation layout follows the user-specified reference repository
+https://github.com/KitaKen1/bapat-lal-q-permanent-lean,
+revision c459861078d42d22dd18144a103b2aee286dbf53.
+The q-permanent proof and unrelated mathematical exposition are not included.

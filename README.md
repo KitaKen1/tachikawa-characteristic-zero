@@ -1,195 +1,339 @@
-# A Characteristic-Zero Counterexample to Tachikawa's Second Conjecture
+# A characteristic-zero Tachikawa counterexample in Lean 4
 
-Tachikawa's second conjecture, in its symmetric characteristic-zero formulation, asks whether vanishing of all positive self-extension groups forces a module to be projective.
+The finite-dimensional symmetric-algebra form of Tachikawa's second conjecture,
+specialized to the rational numbers
+([Tachikawa (1973), Section 8](https://link.springer.com/chapter/10.1007/BFb0060005)), asks:
 
-> [!NOTE]
-> **Conjecture (Tachikawa's second conjecture, symmetric case over $\mathbb Q$).**
->
-> Let $\Gamma$ be a finite-dimensional symmetric $\mathbb Q$-algebra and let $M$ be a finite-dimensional left $\Gamma$-module. If
->
-> $$
-> \mathrm{Ext}^i_\Gamma(M,M)=0\qquad\text{for every }i>0,
-> $$
->
-> then $M$ is projective.
+> **Conjecture.**
+> Let $\Gamma$ be a finite-dimensional symmetric $\mathbb Q$-algebra and $M$
+> a finite-dimensional $\Gamma$-module with a compatible rational scalar action.
+> If $\operatorname{Ext}_\Gamma^n(M,M)=0$ for every $n>0$, then $M$ is projective.
 
-Here symmetric means that $\Gamma$ and its rational dual are isomorphic as $\Gamma$-bimodules. Tensor products without a subscript are over $\mathbb Q$, and $D=\mathrm{Hom}_{\mathbb Q}(-,\mathbb Q)$.
+This repository presents a **Lean 4 counterexample over $\mathbb Q$**.
+It constructs a symmetric algebra $\Gamma$ and a finite nonprojective module $M$
+whose positive self-Ext groups all vanish.
 
-This repository presents a proposed counterexample for **Formal Conjectures**: a symmetric rational algebra $\Gamma$ and a finite nonprojective module $M$ satisfying the displayed vanishing. The argument is outlined below and given in full in the [PDF manuscript](PDF/tachikawa-characteristic-zero.pdf).
+The mathematical argument is also available in the
+[PDF manuscript](https://github.com/KitaKen1/tachikawa-characteristic-zero/blob/main/PDF/tachikawa-characteristic-zero.pdf).
 
-## Proof sketch
+Contributions:
 
-### 1. Construct the rational starting algebra
+1. **FC-style formalization** of the rational symmetric conjecture
+   ([statement](FClikelean/TachikawaCharZero.lean)).
+2. **Complete Lean 4 proof of its negative answer**
+   ([proof](lean/Tachikawa/Main.lean)).
 
-Let $C$ have basis $(e,f,x,y,z,u,v,t,j,n)$, with orthogonal idempotents $e+f=1$ and corners
+Further consequence:
 
-$$
-eCe=\langle e,x,y,z\rangle,\quad eCf=\langle u,v\rangle,\quad
-fCe=\langle t,j\rangle,\quad fCf=\langle f,n\rangle.
-$$
+1. **A negative answer to the general Artin-algebra Auslander–Reiten conjecture**,
+   using the same witness
+   ([statement](FClikelean/AuslanderReiten.lean),
+   [proof](lean/Tachikawa/AuslanderReiten.lean),
+   [relationship](#appendix-relationship-between-the-two-conjectures)).
 
-The nonzero products of radical basis elements are
+**Try it in Lean4Web:** [open the complete proof in one file](https://live.lean-lang.org/#url=https%3A%2F%2Fraw.githubusercontent.com%2FKitaKen1%2Ftachikawa-characteristic-zero%2Fmain%2Flean4web%2FTachikawaCharZeroLean4Web.lean)
+(Lean **v4.35.0-rc4**).
+Select a server environment compatible with the pinned standalone
+project; the large proof may take time and memory to elaborate.
 
-$$
-\begin{array}{llll}
-xy=2z,&yx=z,&xu=v,&yu=v,\\
-ut=y+2x,&uj=z,&un=v,&vt=2z,\\
-tx=j,&ty=4j,&tu=3n,&nt=2j.
-\end{array}
-$$
+## Formal Conjectures targets
 
-Let $s$ be the one-dimensional character supported at $f$, and put $\ell_i=x-(-2)^i y$. Right multiplication gives a projective resolution
+[TachikawaCharZero.lean](FClikelean/TachikawaCharZero.lean) contains the primary
+Tachikawa target. [AuslanderReiten.lean](FClikelean/AuslanderReiten.lean) contains
+the related Artin-algebra consequence in a separate file.
 
-$$
-R_0=Cf,\qquad R_i=Ce\ (i\ge1),\qquad
-d_1=\rho_u,\qquad d_{i+2}=\rho_{\ell_i}\ (i\ge0).
-$$
+The proposed FC contribution is the **Tachikawa entry** announced in
+[issue #7020](https://github.com/google-deepmind/formal-conjectures/issues/7020).
+The AR result is a candidate for a **separate future update** to the
+[existing Artin-algebra entry](https://github.com/google-deepmind/formal-conjectures/blob/d838afa7a62f66dc034c96fb011c10b9bde3f44c/FormalConjectures/Paper/AuslanderReiten.lean).
 
-The kernels and images can be computed in the displayed basis for every index. They give $\mathrm{Ext}^{i}_C(s,s)=0$ for $i>0$ and
+The **rational symmetric Tachikawa target** is:
 
-$$
-H^a\mathrm{Hom}_C(R,C)=
-\begin{cases}Ds&a=2,\\0&a\ne2.\end{cases}
-$$
+~~~lean
+@[category research solved, AMS 16]
+theorem tachikawaSecondConjecture :
+    answer(False) ↔
+      ∀ (Γ : Type) [Ring Γ] [Algebra ℚ Γ] [Module.Finite ℚ Γ],
+        SymmetricOver ℚ Γ →
+          ∀ (M : Type) [AddCommGroup M] [Module Γ M] [Module ℚ M]
+            [IsScalarTower ℚ Γ M] [Module.Finite ℚ M],
+            (∀ n : ℕ, 0 < n →
+              Subsingleton (CategoryTheory.Abelian.Ext
+                (ModuleCat.of Γ M) (ModuleCat.of Γ M) n)) →
+              Module.Projective Γ M := by
+  sorry
+~~~
 
-Explicit finite resolutions also give projective dimension at most two for $DC$ on both sides.
+Here `SymmetricOver ℚ Γ` means that $\Gamma$ is linearly isomorphic to its
+rational dual, compatibly with both regular actions. `IsScalarTower` makes
+the rational scalar action on $M$ compatible with the $\Gamma$-action.
 
-### 2. Compute stable extensions and the scaling actions
+The **related general Artin-algebra Auslander–Reiten target** is:
 
-Set $T=C\ltimes DC$, $E=T\otimes T$, and $X=s\otimes s$. The algebras $T$ and $E$ are symmetric, of dimensions $20$ and $400$. The induced complex $\mathcal J=T\otimes_C R$ fits into a triangle
+~~~lean
+@[category research solved, AMS 16]
+theorem artinAuslanderReiten :
+    answer(False) ↔
+      ∀ (Λ : Type) [Ring Λ] (M : Type) [AddCommGroup M] [Module Λ M]
+        [Module.Finite Λ M] (A : Type) [CommRing A] [IsArtinianRing A]
+        [Algebra A Λ] [Module.Finite A Λ],
+        (∀ n : ℕ, 0 < n →
+          Subsingleton (CategoryTheory.Abelian.Ext
+            (ModuleCat.of Λ M) (ModuleCat.of Λ Λ) n)) →
+        (∀ n : ℕ, 0 < n →
+          Subsingleton (CategoryTheory.Abelian.Ext
+            (ModuleCat.of Λ M) (ModuleCat.of Λ M) n)) →
+          Module.Projective Λ M := by
+  sorry
+~~~
 
-$$
-s[2]\longrightarrow\mathcal J\longrightarrow s
-\xrightarrow{\tau}s[3].
-$$
+Both targets place `answer(False)` outside all universal quantifiers.
+Vanishing is expressed by `Subsingleton` on the actual Mathlib `Abelian.Ext`
+groups. The two `by sorry` bodies are FC statement placeholders with
+`formal_proof` links to the complete proofs in
+[Main.lean](lean/Tachikawa/Main.lean) and
+[AuslanderReiten.lean](lean/Tachikawa/AuslanderReiten.lean).
+Those proofs establish the same statements without holes or custom axioms.
 
-The associated long exact sequence gives $\mathrm{Ext}_T^*(s,s)=\mathbb Q[\tau]$, with $|\tau|=3$. The signed tensor product then gives
+## Mathematical explanation (AI generated)
 
-$$
-\mathrm{Ext}_E^*(X,X)=
-\mathbb Q\langle\tau_1,\tau_2\rangle/
-(\tau_1\tau_2+\tau_2\tau_1).
-$$
+The construction adapts the characteristic-two example in
+[OpenAI Math](https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026)
+to $\mathbb Q$, retaining the signs in the homological comparisons.
+The following sketch links each stage to its Lean implementation.
+Write $D=\operatorname{Hom}_{\mathbb Q}(-,\mathbb Q)$ for rational duality.
 
-Write $\mathcal P_m=\langle\tau_1^a\tau_2^b:a+b=m\rangle$. Symmetric stable duality determines all negative degrees as well:
+**1. Construct a symmetric starting algebra with computable self-Ext.**
+Start with the rational algebra $C$ at parameter $q=2$ and its explicit
+corner-module resolution. Form the trivial extension
 
-$$
-\mathcal H^{3m}=\mathcal P_m,\qquad
-\mathcal H^{-3m-1}=D\mathcal P_m\qquad(m\ge0),
-$$
+~~~math
+T=C\ltimes DC,\qquad \dim_{\mathbb Q}T=20.
+~~~
 
-where $\mathcal H^a=\underline{\mathrm{Hom}}_E(X,X[a])$ and all other groups vanish. The shift $[1]$ denotes inverse syzygy.
+The algebra $T$ is symmetric. A concrete complex of projective corner modules
+produces a one-dimensional nonprojective module $S$ with
 
-For $H\in\mathbb Q^\times$, let $h_H(a,\phi)=(a,H\phi)$ on $T$, and let $U_H=E_{h_H\otimes h_H}$ denote the right-twisted regular bimodule. Its tensor functor fixes $X$ and acts on the two families of stable groups by
+~~~math
+\operatorname{Ext}_T^n(S,S)\cong
+\begin{cases}
+\mathbb Q,&n=3m,\quad m\ge0,\\
+0,&n\not\equiv0\pmod3.
+\end{cases}
+~~~
 
-$$
-H^{-m}\quad\text{in degree }3m,\qquad
-H^{m+2}\quad\text{in degree }-3m-1.
-$$
+The three-degree periodicity comes from four short exact sequences;
+their connecting maps identify the period with Yoneda multiplication by a
+nonzero degree-three class. See
+[Resolution.lean](lean/TachikawaCharZero/Resolution.lean),
+[StartingSymmetric.lean](lean/TachikawaCharZero/StartingSymmetric.lean),
+[PeriodThree.lean](lean/TachikawaCharZero/PeriodThree.lean) and
+[PeriodicExt.lean](lean/TachikawaCharZero/PeriodicExt.lean).
 
-The negative weight follows from the action $H^2$ on the degree-minus-one socle class and the composition pairing with positive extensions.
+**2. Tensor the example and compute its complete-resolution profile.**
+Set $E=T\otimes_{\mathbb Q}T$ and $X=S\otimes_{\mathbb Q}S$.
+Then $E$ is symmetric of dimension $400$, and $X$ remains one-dimensional
+and nonprojective. For $m\ge0$, the signed Künneth comparison gives
 
-### 3. Obtain bimodule maps from a twisted trace obstruction
+~~~math
+\operatorname{Ext}_E^{3m}(X,X)\cong\mathbb Q^{m+1},\qquad
+\operatorname{Ext}_E^n(X,X)=0\quad(n\not\equiv0\pmod3).
+~~~
 
-The diagonal map
+A complete projective resolution of $X$ extends this calculation to every
+integer degree. Its Tate self-Ext is $\mathbb Q^{m+1}$ in degree $3m$, the
+dual of that space in degree $-3m-1$, and zero elsewhere. These are
+isomorphisms of actual cohomology spaces, with explicit bases in the
+nonnegative supported degrees. See
+[TensorProfile.lean](lean/TachikawaCharZero/TensorProfile.lean),
+[MonomialBasis.lean](lean/TachikawaCharZero/MonomialBasis.lean) and
+[TateProfile.lean](lean/TachikawaCharZero/TateProfile.lean).
 
-$$
-\sigma_0(e,f,x,y,z,u,v,t,j,n)
-=(e,f,-x,-y,z,u,-v,-t,j,-n)
-$$
+**3. Use two scaling twists to obtain a triangular cone with vanishing self-Hom.**
+The two rational scaling parameters are $H_1=2$ and $H_2=3$.
+On supported Tate degrees, the corresponding actions have weights for $m\ge0$:
 
-is an involutive automorphism of $C$. For every $a\in C$, the multiplication table gives
+~~~math
+w_H(3m)=H^{-m},\qquad w_H(-3m-1)=H^{m+2}.
+~~~
 
-$$
-\mathrm{tr}(L_aR_f\sigma_0^{-1})=0.
-$$
+The constructed bimodule $F$ has two projections realizing these actions.
+After applying the projections, its signed connecting map has the form
 
-Put $B=C\otimes C$ and $\theta_0=\sigma_0\otimes\sigma_0$. If $\chi_B$ is the character of $s\otimes s$, the bimodule map
+~~~math
+\Delta_a(x,y)=
+\bigl(w_{H_1}(a)x-\varepsilon_a y,
+      w_{H_2}(a)x-\varepsilon_a y\bigr),
+\qquad \varepsilon_a=(-1)^a.
+~~~
 
-$$
-\eta:B_{\theta_0}\longrightarrow DB,\qquad
-\eta(a)=\chi_B(a)\chi_B
-$$
+Distinct weights give the required injectivity and surjectivity in the
+supported degrees; the zero spaces and exceptional degrees are handled
+separately. The sign remains present over $\mathbb Q$. See
+[TwistedBranchWeights.lean](lean/TachikawaCharZero/TwistedBranchWeights.lean),
+[TwoBranchDelta.lean](lean/TachikawaCharZero/TwoBranchDelta.lean) and
+[TwoBranchBijectivity.lean](lean/TachikawaCharZero/TwoBranchBijectivity.lean).
 
-cannot factor through a perfect bimodule complex. Indeed, the finite injective-dimension bound reduces such a factorization to ordinary maps through finite sums and summands of $DB\otimes B$. Evaluation at $f\otimes f$ then gives a twisted trace, hence zero, whereas $\eta(1)(f\otimes f)=1$.
+The bimodule and its complete lift define a totally acyclic cone $P$ over
+the finite triangular algebra $R=\operatorname{Triangular}(E,F)$.
+Let $Z=\operatorname{coker}(P_1\to P_0)$. The connecting-map calculation proves
 
-Derived induction and stable duality turn this obstruction into a finite bimodule $Y$, projective separately on the left and right, and maps $g_H:U_H\to Y$ whose evaluations at $X$ are stably nonzero. The signed Koszul sequence for $\tau_1,\tau_2$, together with its negative-degree dual, gives
+~~~math
+H^a\operatorname{Hom}_R(P,Z)=0
+\qquad\text{for }a>0\text{ or }a\le-2.
+~~~
 
-$$
-W^a:=\underline{\mathrm{Hom}}_E(X,(Y\otimes_E X)[a])=
-\begin{cases}\mathbb Q&a=-3,0,\\0&\text{otherwise}.\end{cases}
-$$
+If $Z$ were projective, the cone would be contractible, forcing the original
+complete resolution of $X$ to be contractible and contradicting the
+nonprojectivity of $X$. See
+[TriangularWitness.lean](lean/TachikawaCharZero/TriangularWitness.lean),
+[TriangularSelfHom.lean](lean/TachikawaCharZero/TriangularSelfHom.lean) and
+[TriangularNonprojective.lean](lean/TachikawaCharZero/TriangularNonprojective.lean).
 
-### 4. Combine the two twists and form a triangular cone
+**4. Transfer to the final symmetric algebra.**
+Take the trivial extension and its induced module:
 
-Take $H=2,3$ and rescale $g_2,g_3$ so that their evaluated stable classes agree. Choose a finite free bimodule $Q$ with a surjection $\pi:Q\to Y$, and define $F$ by
+~~~math
+\Gamma=R\ltimes DR,\qquad
+M=Z\oplus D\operatorname{Hom}_R(Z,R).
+~~~
 
-$$
-0\longrightarrow F\longrightarrow U_2\oplus U_3\oplus Q
-\xrightarrow{(g_2,-g_3,\pi)}Y\longrightarrow0.
-$$
+The algebra $\Gamma$ is finite-dimensional and symmetric, and $M$ is finite
+and nonprojective. The positive and negative Hom-vanishing ranges from Step 3
+give exactness on both sides of the transfer construction, yielding
 
-This sequence splits on each side. The normalized common class gives a stable map $v:X\to F\otimes_E X$ projecting to $(1,1)$. The resulting comparison maps are
+~~~math
+\operatorname{Ext}_\Gamma^n(M,M)=0\quad\text{for every }n>0.
+~~~
 
-$$
-\Delta^a(g,h)=F(g)v-v[a]h.
-$$
+This is the rational Tachikawa counterexample. Since a finite-dimensional
+symmetric algebra is self-injective, the same module also satisfies
+$\operatorname{Ext}_\Gamma^n(M,\Gamma)=0$ for every $n>0$.
+Taking the Artinian base ring to be $\mathbb Q$ therefore refutes the general
+Artin-algebra Auslander–Reiten statement. See
+[FinalTransfer.lean](lean/TachikawaCharZero/FinalTransfer.lean) and
+[ArtinWitness.lean](lean/TachikawaCharZero/ArtinWitness.lean).
 
-On the supported positive and negative degrees, projection to the two twists identifies these maps with
+## Files
 
-$$
-\begin{pmatrix}2^{-m}&-1\\3^{-m}&-1\end{pmatrix}
-\quad(m\ge1),\qquad
-\begin{pmatrix}2^{m+2}&-1\\3^{m+2}&-1\end{pmatrix}
-\quad(m\ge0),
-$$
+| Directory | Lean version | Purpose |
+|---|---|---|
+| [FClikelean/](FClikelean/) | v4.33.1 | Separate Tachikawa and AR statements, definitions, docstrings and proof links |
+| [lean/](lean/) | v4.34.1 | Complete modular proofs and vendored supporting infrastructure |
+| [lean4web/](lean4web/) | v4.35.0-rc4 | Complete single-file proof importing only Mathlib |
 
-tensored with the identity on the corresponding stable group. Their determinants are nonzero. The remaining boundary maps are a surjection in degree zero and the injection $0\to\mathbb Q$ in degree $-2$.
+The modular entry point is [Tachikawa.lean](lean/Tachikawa.lean).
+The single-file edition is generated from its dependencies by
+[make_lean4web.py](lean/scripts/make_lean4web.py), which scopes the source
+modules separately and applies the adaptations needed for Lean 4.35.
+Each project pins its dependencies in `lake-manifest.json`.
 
-Over the triangular algebra
+## Verification
 
-$$
-\Lambda=\begin{pmatrix}E&0\\F&E\end{pmatrix},
-$$
+The native and standalone proofs have passed local compilation, together
+with FC metadata checks and comparison of the compiled mathematical statements.
+Both final theorems depend only on `propext`, `Classical.choice` and `Quot.sound`.
+The complete proofs have no proof holes; the FC display contains two intentional
+statement placeholders.
 
-lift $v$ to a map between the two column complexes of a complete resolution of $X$, and take its mapping cone $P_Z$. Its degree-zero cokernel $Z$ is finite and nonprojective. The full endomorphism complex has connecting maps $\Delta^a$, so their kernels and cokernels give
+These checks used existing dependency caches. A cold build, live-browser
+execution, independent review and Formal Conjectures acceptance remain unverified.
 
-$$
-H^a\mathrm{Hom}_\Lambda(P_Z,Z)=
-\begin{cases}\mathbb Q&a=-1,0,\\0&\text{otherwise}.\end{cases}
-$$
+To build the native proof from the repository root:
 
-### 5. Transfer to a symmetric algebra
+~~~sh
+cd lean
+lake exe cache get
+lake build Tachikawa
+~~~
 
-Set
+To build the standalone proof, run from the repository root:
 
-$$
-\Gamma=\Lambda\ltimes D\Lambda,\qquad
-M=\Gamma\otimes_\Lambda Z.
-$$
+~~~sh
+cd lean4web
+lake exe cache get
+lake build TachikawaCharZeroLean4Web
+~~~
 
-Total acyclicity of $P_Z$ makes $D\Lambda\otimes_\Lambda P_Z$ exact. Thus $\Gamma\otimes_\Lambda P_Z$ is an exact complex of finite projective $\Gamma$-modules resolving $M$ in nonnegative degrees.
+To check the primary FC statement and the separate AR statement, run from
+the repository root:
 
-For $N=D\Lambda\otimes_\Lambda Z$, the negative tail supplies an injective coresolution and gives
+~~~sh
+cd FClikelean
+lake --wfail build TachikawaCharZero
+lake --wfail build AuslanderReiten
+~~~
 
-$$
-\mathrm{Ext}_\Lambda^i(Z,N)
-\cong D H^{-i-1}\mathrm{Hom}_\Lambda(P_Z,Z)=0
-\qquad(i>0).
-$$
+To regenerate the standalone source, run
+`python3 lean/scripts/make_lean4web.py` from the repository root.
 
-Induction-restriction adjunction therefore yields
+## References
 
-$$
-\mathrm{Ext}_\Gamma^i(M,M)
-\cong\mathrm{Ext}_\Lambda^i(Z,Z\oplus N)=0
-\qquad(i>0).
-$$
+- [Ki26] K. Kitamura, *A characteristic-zero Tachikawa counterexample* (2026),
+  [PDF manuscript](https://github.com/KitaKen1/tachikawa-characteristic-zero/blob/main/PDF/tachikawa-characteristic-zero.pdf)
+  and [Lean proof in this repository](lean/Tachikawa/Main.lean).
+- [Tac73] H. Tachikawa,
+  [Quasi-Frobenius Rings and Generalizations](https://link.springer.com/chapter/10.1007/BFb0060005),
+  Lecture Notes in Mathematics 351 (1973), Section 8.
+- [AR75] M. Auslander and I. Reiten,
+  [On a generalized version of the Nakayama conjecture](https://doi.org/10.1090/S0002-9939-1975-0389977-6),
+  Proc. Amer. Math. Soc. 52 (1975), 69–74.
+- [OAI26] OpenAI Math,
+  [A counterexample to Tachikawa's second conjecture](https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026)
+  (September 2026), source revision `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`.
+  The rational construction adapts this characteristic-two example and its
+  supporting Lean infrastructure.
+- [FC26] The Formal Conjectures Authors,
+  [AuslanderReiten.lean](https://github.com/google-deepmind/formal-conjectures/blob/d838afa7a62f66dc034c96fb011c10b9bde3f44c/FormalConjectures/Paper/AuslanderReiten.lean),
+  source revision `d838afa7a62f66dc034c96fb011c10b9bde3f44c`.
+  This supplies the general Artin-algebra conjecture statement.
 
-The trivial extension $\Gamma$ is symmetric. If $M$ were projective, applying $\Lambda\otimes_\Gamma-$ to a split free presentation would make $Z$ projective, a contradiction. This gives the required finite nonprojective self-orthogonal module over $\mathbb Q$.
+The project is distributed under Apache-2.0. See [LICENSE](LICENSE),
+[NOTICE](NOTICE) and the preserved vendor license and source headers.
 
-## Detailed manuscript
+## AI usage disclosure
 
-- [PDF manuscript](PDF/tachikawa-characteristic-zero.pdf)
+This formalization, mathematical exploration, proof development, and documentation were produced by Kenta Kitamura with assistance from ChatGPT and OpenAI Codex using GPT-6 Astra and GPT-6.1 sol.
 
-Public draft 1, 9 October 2026.
+## Appendix: relationship between the two conjectures
+
+### Natural-language relationship
+
+| Statement | Hypotheses on the algebra and module | Vanishing premise |
+|---|---|---|
+| Rational symmetric Tachikawa conjecture | A finite-dimensional symmetric $\mathbb Q$-algebra $\Gamma$ and a finite-dimensional compatible module $M$ | $\operatorname{Ext}_\Gamma^n(M,M)=0$ for all $n>0$ |
+| General Artin-algebra Auslander–Reiten conjecture | An algebra $\Lambda$ finite over a commutative Artinian base ring and a finitely generated $\Lambda$-module $M$ | $\operatorname{Ext}_\Lambda^n(M,\Lambda)=\operatorname{Ext}_\Lambda^n(M,M)=0$ for all $n>0$ |
+
+Both conjectures conclude that $M$ is projective. The rational symmetric
+case satisfies the extra regular-module Ext premise because $\Gamma$
+is self-injective, and $M$ is finitely generated over $\Gamma$ because it is
+finite-dimensional over $\mathbb Q$. Therefore **the general Artin-algebra
+AR conjecture would imply the rational symmetric Tachikawa conjecture**.
+By contraposition, **the Tachikawa counterexample also refutes AR**.
+The AR result here is a consequence of the main counterexample.
+
+### Lean statements
+
+Both files use the namespace `TachikawaCharZero`:
+
+| Result | Public theorem | Complete proof |
+|---|---|---|
+| Primary Tachikawa result | `TachikawaCharZero.tachikawaSecondConjecture` | [Main.lean](lean/Tachikawa/Main.lean) |
+| Related AR result | `TachikawaCharZero.artinAuslanderReiten` | [AuslanderReiten.lean](lean/Tachikawa/AuslanderReiten.lean) |
+
+[ArtinWitness.lean](lean/TachikawaCharZero/ArtinWitness.lean) proves the
+regular-module vanishing and finite generation used by the second theorem.
+The witness is over $\mathbb Q$ and concerns possibly noncommutative algebras;
+the result does not assert a counterexample to a commutative variant or over
+every characteristic-zero field.
+
+## Appendix: timeline
+
+| Year | Who | Problem or result |
+|---|---|---|
+| 1973 | [Hiroyuki Tachikawa](https://link.springer.com/chapter/10.1007/BFb0060005) | Proposes Tachikawa's second conjecture. |
+| 1975 | [Maurice Auslander and Idun Reiten](https://doi.org/10.1090/S0002-9939-1975-0389977-6) | Propose the Auslander–Reiten conjecture. |
+| 2024 | [Hongxing Chen, Ming Fang and Changchang Xi](https://doi.org/10.1112/S0010437X24007395) | Give an equivalent formulation for symmetric algebras. |
+| September 2026 | [Haruhisa Enomoto](https://arxiv.org/abs/2609.19172v1) | Reduces Auslander–Reiten to Tachikawa's second conjecture. |
+| September 2026 | [OpenAI Math](https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026) | Constructs a symmetric counterexample in characteristic two. |
+| October 2026 | **This repository (Kenta Kitamura)** | **Proves both negative answers over $\mathbb Q$ in Lean 4.** |
