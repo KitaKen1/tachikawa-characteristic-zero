@@ -7,7 +7,7 @@ specialized to the rational numbers
 > **Conjecture.**
 > Let $\Gamma$ be a finite-dimensional symmetric $\mathbb Q$-algebra and $M$
 > a finite-dimensional $\Gamma$-module with a compatible rational scalar action.
-> If $\operatorname{Ext}_\Gamma^n(M,M)=0$ for every $n>0$, then $M$ is projective.
+> If $\mathrm{Ext}_\Gamma^n(M,M)=0$ for every $n>0$, then $M$ is projective.
 
 This repository presents a **Lean 4 counterexample over $\mathbb Q$**.
 It constructs a symmetric algebra $\Gamma$ and a finite nonprojective module $M$
@@ -101,7 +101,7 @@ The construction adapts the characteristic-two example in
 [OpenAI Math](https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026)
 to $\mathbb Q$, retaining the signs in the homological comparisons.
 The following sketch links each stage to its Lean implementation.
-Write $D=\operatorname{Hom}_{\mathbb Q}(-,\mathbb Q)$ for rational duality.
+Write $D=\mathrm{Hom}_{\mathbb Q}(-,\mathbb Q)$ for rational duality.
 
 **1. Construct a symmetric starting algebra with computable self-Ext.**
 Start with the rational algebra $C$ at parameter $q=2$ and its explicit
@@ -115,7 +115,7 @@ The algebra $T$ is symmetric. A concrete complex of projective corner modules
 produces a one-dimensional nonprojective module $S$ with
 
 ~~~math
-\operatorname{Ext}_T^n(S,S)\cong
+\mathrm{Ext}_T^n(S,S)\cong
 \begin{cases}
 \mathbb Q,&n=3m,\quad m\ge0,\\
 0,&n\not\equiv0\pmod3.
@@ -136,8 +136,8 @@ Then $E$ is symmetric of dimension $400$, and $X$ remains one-dimensional
 and nonprojective. For $m\ge0$, the signed Künneth comparison gives
 
 ~~~math
-\operatorname{Ext}_E^{3m}(X,X)\cong\mathbb Q^{m+1},\qquad
-\operatorname{Ext}_E^n(X,X)=0\quad(n\not\equiv0\pmod3).
+\mathrm{Ext}_E^{3m}(X,X)\cong\mathbb Q^{m+1},\qquad
+\mathrm{Ext}_E^n(X,X)=0\quad(n\not\equiv0\pmod3).
 ~~~
 
 A complete projective resolution of $X$ extends this calculation to every
@@ -175,11 +175,11 @@ separately. The sign remains present over $\mathbb Q$. See
 [TwoBranchBijectivity.lean](lean/TachikawaCharZero/TwoBranchBijectivity.lean).
 
 The bimodule and its complete lift define a totally acyclic cone $P$ over
-the finite triangular algebra $R=\operatorname{Triangular}(E,F)$.
-Let $Z=\operatorname{coker}(P_1\to P_0)$. The connecting-map calculation proves
+the finite triangular algebra $R=\mathrm{Triangular}(E,F)$.
+Let $Z=\mathrm{coker}(P_1\to P_0)$. The connecting-map calculation proves
 
 ~~~math
-H^a\operatorname{Hom}_R(P,Z)=0
+H^a\mathrm{Hom}_R(P,Z)=0
 \qquad\text{for }a>0\text{ or }a\le-2.
 ~~~
 
@@ -195,7 +195,7 @@ Take the trivial extension and its induced module:
 
 ~~~math
 \Gamma=R\ltimes DR,\qquad
-M=Z\oplus D\operatorname{Hom}_R(Z,R).
+M=Z\oplus D\mathrm{Hom}_R(Z,R).
 ~~~
 
 The algebra $\Gamma$ is finite-dimensional and symmetric, and $M$ is finite
@@ -203,12 +203,12 @@ and nonprojective. The positive and negative Hom-vanishing ranges from Step 3
 give exactness on both sides of the transfer construction, yielding
 
 ~~~math
-\operatorname{Ext}_\Gamma^n(M,M)=0\quad\text{for every }n>0.
+\mathrm{Ext}_\Gamma^n(M,M)=0\quad\text{for every }n>0.
 ~~~
 
 This is the rational Tachikawa counterexample. Since a finite-dimensional
 symmetric algebra is self-injective, the same module also satisfies
-$\operatorname{Ext}_\Gamma^n(M,\Gamma)=0$ for every $n>0$.
+$\mathrm{Ext}_\Gamma^n(M,\Gamma)=0$ for every $n>0$.
 Taking the Artinian base ring to be $\mathbb Q$ therefore refutes the general
 Artin-algebra Auslander–Reiten statement. See
 [FinalTransfer.lean](lean/TachikawaCharZero/FinalTransfer.lean) and
@@ -301,8 +301,8 @@ This formalization, mathematical exploration, proof development, and documentati
 
 | Statement | Hypotheses on the algebra and module | Vanishing premise |
 |---|---|---|
-| Rational symmetric Tachikawa conjecture | A finite-dimensional symmetric $\mathbb Q$-algebra $\Gamma$ and a finite-dimensional compatible module $M$ | $\operatorname{Ext}_\Gamma^n(M,M)=0$ for all $n>0$ |
-| General Artin-algebra Auslander–Reiten conjecture | An algebra $\Lambda$ finite over a commutative Artinian base ring and a finitely generated $\Lambda$-module $M$ | $\operatorname{Ext}_\Lambda^n(M,\Lambda)=\operatorname{Ext}_\Lambda^n(M,M)=0$ for all $n>0$ |
+| Rational symmetric Tachikawa conjecture | A finite-dimensional symmetric $\mathbb Q$-algebra $\Gamma$ and a finite-dimensional compatible module $M$ | $\mathrm{Ext}_\Gamma^n(M,M)=0$ for all $n>0$ |
+| General Artin-algebra Auslander–Reiten conjecture | An algebra $\Lambda$ finite over a commutative Artinian base ring and a finitely generated $\Lambda$-module $M$ | $\mathrm{Ext}_\Lambda^n(M,\Lambda)=\mathrm{Ext}_\Lambda^n(M,M)=0$ for all $n>0$ |
 
 Both conjectures conclude that $M$ is projective. The rational symmetric
 case satisfies the extra regular-module Ext premise because $\Gamma$
